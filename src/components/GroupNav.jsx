@@ -19,7 +19,7 @@ import {
       <Box mb={3}>
         <Clickable height='auto' onClick={onToggle}>
           <HStack mb={2} ml={6}>
-            <Text variant='smallBoldNormal' fontSize='sm'>
+            <Text variant='navLink'>
               {props.main.name}
             </Text>
             {isOpen ? <VscTriangleDown /> : <VscTriangleRight />}

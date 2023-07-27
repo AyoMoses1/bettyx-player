@@ -78,14 +78,6 @@ export const pathObject = [
   },
   {
     main: {
-      name: NavNames.featured,
-      path: paths.featured,
-      icon: <GrUserWorker />,
-    },
-    sub: [],
-  },
-  {
-    main: {
       name: NavNames.basketball,
       path: paths.basketball,
       icon: <GrUserWorker />,
@@ -120,14 +112,6 @@ export const pathObject = [
     main: {
       name: NavNames.boxing,
       path: paths.boxing,
-      icon: <GrUserWorker />,
-    },
-    sub: [],
-  },
-  {
-    main: {
-      name: NavNames.tennis,
-      path: paths.tennis,
       icon: <GrUserWorker />,
     },
     sub: [],
