@@ -1,20 +1,6 @@
-import React, { useState } from 'react';
-import {
-  AsyncSelect,
-  OptionsOrGroups,
-  GroupBase,
-  ActionMeta,
-  OptionBase,
-} from 'chakra-react-select';
-import { FormLabel, FormControl, useTheme } from '@chakra-ui/react';
-import { AsyncSelectOptions as Options} from '../utils/types';
-
-
-
-
-
-
-
+import React, { useState } from "react";
+import { AsyncSelect } from "chakra-react-select";
+import { FormLabel, FormControl } from "@chakra-ui/react";
 
 const SearchInput = ({
   placeholder,
@@ -24,15 +10,11 @@ const SearchInput = ({
   isClearable = false,
   getOptions,
   size,
-  mb
-
+  mb,
 }) => {
   const [timer, setTimer] = useState();
-  const theme = useTheme();
 
-  const handleSearchWorkshop = (
-    inputValue, callback
-  ) => {
+  const handleSearchWorkshop = (inputValue, callback) => {
     clearTimeout(timer);
 
     const thisTimer = setTimeout(() => {
@@ -49,14 +31,14 @@ const SearchInput = ({
     <FormControl mb={mb}>
       <FormLabel mb={0}>{label}</FormLabel>
       <AsyncSelect
-        size={size ?? 'sm'}
+        size={size ?? "sm"}
         value={value}
         onChange={onChange}
         loadOptions={handleSearchWorkshop}
         isClearable={isClearable}
-        focusBorderColor='primary'
+        focusBorderColor="primary"
       />
-     {/*  {error && <FormErrorMessage>{error.message}</FormErrorMessage>} */}
+      {/*  {error && <FormErrorMessage>{error.message}</FormErrorMessage>} */}
     </FormControl>
   );
 };
