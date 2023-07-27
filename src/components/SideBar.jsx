@@ -18,11 +18,15 @@ import GroupNav, { SingleNav } from './GroupNav';
 import NavMole from './NavMole';
 import pagePaths, { pathObject } from '../utils/paths';
 
-import { useUserDetailsContext } from '../context/userDetailsContext';
+// import { useUserDetailsContext } from '../context/userDetailsContext';
 
 
 const Index = (props) => {
-  const { userDetails } = useUserDetailsContext();
+  // const { userDetails } = useUserDetailsContext();
+  const userDetails = {
+    firstName: "ayo",
+    lastName: "moses"
+  }
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const navs = pathObject.map((item) => (
