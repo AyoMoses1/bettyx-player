@@ -34,12 +34,12 @@ const navLinks = [
 ];
 const NavBarMain = () => {
   return (
-    <StyledBox color="white" px={0} py={0}>
+    <StyledBox color="white" px={0} py={0} pb={2} bgColor="blue">
       <Flex align="center">
         {navLinks.map((item) => (
-          <StyledBox bgColor="blue" mr={4}>
-            <Text variant="navBold">{item.symbol}</Text>
-            <Text variant="nav">{item.name}</Text>
+          <StyledBox bgColor="gray3" ml={2}>
+            <Text variant="navBold" color="blue">{item.symbol}</Text>
+            <Text variant="nav" color="blue">{item.name}</Text>
           </StyledBox>
         ))}
       </Flex>
