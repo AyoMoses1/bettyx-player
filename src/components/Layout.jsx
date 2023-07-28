@@ -18,6 +18,7 @@ import SideBar from "./SideBar";
 import IconSideBar from "./IconSideBar";
 import breakPoints from "../utils/breakPoints";
 import Navbar from "./NavBar";
+import NavBarMain from "./NavBarMain";
 
 const close = keyframes`
   from { 
@@ -70,14 +71,6 @@ const Layout = () => {
     onToggle();
   }, []);
 
-  const animateOpen = isOpen
-    ? `${open} 0.3s linear 0s forwards`
-    : `${close} 0s linear 0s forwards`;
-
-  const bigAnimateOpen = !isOpen
-    ? `${rightPainOpen} 0s linear 0s forwards`
-    : `${rightPainClose} 0.3s linear 0s forwards`;
-
   return (
     <Box>
       <Navbar />
@@ -93,6 +86,7 @@ const Layout = () => {
         </GridItem>
         <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 15 }}>
           <Box width="100%">
+            <NavBarMain/>
             <Outlet />
           </Box>
         </GridItem>

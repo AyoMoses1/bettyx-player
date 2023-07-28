@@ -41,7 +41,7 @@ const Navbar = () => {
   // const { setCurrentPage } = useContext(CurrentPageContext);
 
   return (
-    <Box bg="gray.800" color="white" py={["2", "4"]} h={["8vh", "12vh"]}>
+    <Box bg="blue" color="white" py={["2", "4"]} h={["8vh", "12vh"]}>
       <Flex maxW="98%" mx="auto" align="center">
         <Box>
           <Flex>
