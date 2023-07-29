@@ -37,7 +37,7 @@ export const ButtonStyle = {
       borderRadius: 'none',
     }),
     secondary: (props) => ({
-      bg: props.theme.colors.buttonOne,
+      bg: props.theme.colors.blue,
       color: props.theme.colors.text,
       width: '127px',
       borderRadius: 'none',
