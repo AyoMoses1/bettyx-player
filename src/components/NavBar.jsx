@@ -41,7 +41,16 @@ const Navbar = () => {
   // const { setCurrentPage } = useContext(CurrentPageContext);
 
   return (
-    <Box bg="blue" color="white" py={["2", "4"]} h={["8vh", "12vh"]}>
+    <Box
+      bg="blue"
+      color="white"
+      py={["2", "4"]}
+      h={["8vh", "12vh"]}
+      position="fixed"
+      height="10vh"
+      width="100vw"
+      zIndex="800"
+    >
       <Flex maxW="98%" mx="auto" align="center">
         <Box>
           <Flex>
@@ -90,11 +99,11 @@ const Navbar = () => {
         <Menu>
           <MenuButton as={Button}>
             <Flex justifyContent="space-between" width="20vw">
-              <CgProfile size={24}/>
-              <Spacer/>
+              <CgProfile size={24} />
+              <Spacer />
               <HStack>
                 <span>R1524</span>
-              <FaChevronDown />
+                <FaChevronDown />
               </HStack>
             </Flex>
           </MenuButton>

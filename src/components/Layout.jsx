@@ -76,18 +76,26 @@ const Layout = () => {
       <Navbar />
       <Grid
         minH="80vh"
-        templateRows="repeat(10, 1fr)"
-        templateColumns="repeat(20, 1fr)"
+        // templateRows="repeat(10, 1fr)"
+        templateColumns="25vw 1fr"
       >
         <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 5 }}>
-          <Box zIndex="900" h="85vh" position="fixed" width="25vw">
+          <Box zIndex="900" position="fixed" width="25vw" height="100vh">
             <SideBar isOpen={isOpen} />
           </Box>
         </GridItem>
         <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 15 }}>
-          <Box width="100%">
-            <NavBarMain/>
-            <Outlet />
+          <Box pt="4rem" pl="25vw" pr="1rem" pb="1rem" overflowY="auto">
+            <Box position="fixed" top="12vh" zIndex="800" bg="white" width="100%">
+              <NavBarMain />
+            </Box>
+
+            {/* Scrolling Content */}
+            <Box pt="5rem">
+              {" "}
+              {/* Adjust this padding as needed */}
+              <Outlet />
+            </Box>
           </Box>
         </GridItem>
       </Grid>

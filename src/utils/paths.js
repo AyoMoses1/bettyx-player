@@ -38,6 +38,21 @@ export const NavNames = {
   autoRacing: "Auto Racing",
   cricket: "Cricket",
 };
+export const PageTitles = {
+  upNext: "Up Next",
+  featured: "Feaured",
+  liveStreaming: "Live Streaming",
+  baseball: "Baseball",
+  football: "Football",
+  basketball: "Basketball",
+  soccer: "Soccer",
+  golf: "Golf",
+  martialArts: "Martial Arts",
+  boxing: "Boxing",
+  tennis: "Tennis",
+  autoRacing: "Auto Racing",
+  cricket: "Cricket",
+};
 
 export const pathObject = [
   {

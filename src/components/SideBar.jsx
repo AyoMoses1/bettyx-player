@@ -57,6 +57,7 @@ const Index = (props) => {
       height="100%"
       borderRight="1px solid"
       borderColor="gray.200"
+      marginTop="12vh"
     >
       <VStack borderBottom="1px solid" borderColor="gray.200" h="15%" w="100%">
         <Center h="100%" w="100%">
