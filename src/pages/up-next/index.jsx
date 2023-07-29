@@ -15,7 +15,10 @@ const Index = () => {
 
   return (
     <PageScaffold title={PageTitles.upNext}>
-      <Info>View all orders made by you</Info>
+      <Info>
+        Soccer wagers, unless otherwise specified, are for regulation time and
+        added time only. Extra time and shoot outs are not included.
+      </Info>
       <Box mt={8}>
         <DynamicTable
           setPageProps={setPageProps}

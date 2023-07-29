@@ -16,6 +16,7 @@ import UpNext from "./pages/up-next";
 import Cricket from "./pages/cricket";
 import Layout from "./components/Layout";
 import paths from "./utils/paths";
+import SignIn from "pages/auth/SignIn";
 
 export const App = () => {
   return (
@@ -43,7 +44,8 @@ export const App = () => {
           <Route path={paths.autoRacing} element={<AutoRacing />} />
           <Route path={paths.cricket} element={<Cricket />} />
         </Route>
-        {/* <Route path={paths.login} element={<SignIn />} />
+        <Route path={paths.login} element={<SignIn />} />
+         {/*
         <Route path={paths.forgotPassword} element={<ForgotPassword />} />
         <Route path={paths.enterNewPassword} element={<EnterNewPassword />} />
         <Route path={paths.passwordCreated} element={<PasswordCreated />} /> */}
