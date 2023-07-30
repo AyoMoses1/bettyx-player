@@ -10,7 +10,7 @@ import {
 const PageHeader = (props) => {
     const [isLargerThan1500] = useMediaQuery(breakPoints.laptopL);
     return (
-      <Box position='fixed' width='100%' zIndex='900'>
+      <Box position='fixed' width='100%' >
         <Flex
           mb={3}
           alignItems='center'

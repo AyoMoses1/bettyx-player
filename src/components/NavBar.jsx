@@ -10,32 +10,29 @@ import {
   Spacer,
   VStack,
   Text,
-  Image,
+  Icon,
   HStack,
 } from "@chakra-ui/react";
-import { FiSearch, FiLogOut } from "react-icons/fi";
-import {
-  AiOutlineHome,
-  AiOutlineMessage,
-  AiOutlineLineChart,
-  AiOutlineCalendar,
-  AiOutlineSetting,
-} from "react-icons/ai";
-import { CurrentPageContext } from "../App";
-import { BiChevronsDown, BiLogInCircle, BiPowerOff } from "react-icons/bi";
-import {
-  FaAddressCard,
-  FaChevronDown,
-  FaSdCard,
-  FaTh,
-  FaTv,
-  FaVrCardboard,
-} from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
+import { AiOutlineHome } from "react-icons/ai";
+import { FaAddressCard, FaChevronDown, FaTh, FaTv } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { menuItems } from "./utils/helpers";
+import { BiPowerOff } from "react-icons/bi";
+import { useQueryClient } from "@tanstack/react-query";
+import paths from "utils/paths";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const handleLogout = () => {
-    console.log("Logout clicked");
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("la_auth");
+    queryClient.cancelQueries();
+    queryClient.clear();
+    navigate(paths.login);
   };
 
   // const { setCurrentPage } = useContext(CurrentPageContext);
@@ -107,26 +104,32 @@ const Navbar = () => {
               </HStack>
             </Flex>
           </MenuButton>
-          <MenuList width="20vw">
-            <MenuItem minH="48px">
-              <Image
-                boxSize="2rem"
-                borderRadius="full"
-                src="https://placekitten.com/100/100"
-                alt="Fluffybuns the destroyer"
-                mr="12px"
-              />
-              <span>Fluffybuns the Destroyer</span>
-            </MenuItem>
-            <MenuItem minH="40px">
-              <Image
-                boxSize="2rem"
-                borderRadius="full"
-                src="https://placekitten.com/120/120"
-                alt="Simon the pensive"
-                mr="12px"
-              />
-              <span>Simon the pensive</span>
+          <MenuList width="20vw" bgColor="black" border="none">
+            {menuItems.map((item) => (
+              <MenuItem
+                minH="48px"
+                bgColor="black"
+                _hover={{ bgColor: "blue" }}
+              >
+                <Icon
+                  boxSize="2rem"
+                  borderRadius="full"
+                  src="https://placekitten.com/100/100"
+                  alt="Fluffybuns the destroyer"
+                  mr="12px"
+                  as={item.icon}
+                />
+                <span>{item?.name}</span>
+              </MenuItem>
+            ))}
+            <MenuItem
+              minH="48px"
+              bgColor="black"
+              _hover={{ bgColor: "blue" }}
+              onClick={handleLogout}
+            >
+              <Icon boxSize="2rem" mr="12px" as={BiPowerOff} />
+              <span>Sign Out</span>
             </MenuItem>
           </MenuList>
         </Menu>

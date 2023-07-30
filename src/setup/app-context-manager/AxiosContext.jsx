@@ -1,12 +1,10 @@
 import React, { createContext, useContext } from "react";
-import { AxiosInstance } from "axios";
 import {
   publicAxios,
   authAxios,
   setupPublicAxios,
   setupAuthAxios,
 } from "../auth/axios";
-import { AxiosProviderProps } from "models/AxiosTypes";
 
 const AxiosContext = createContext(undefined);
 
