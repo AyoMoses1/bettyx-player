@@ -26,17 +26,15 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
-  
+
   const handleLogout = (e) => {
     e.preventDefault();
-    localStorage.removeItem("la_auth");
+    localStorage.removeItem("bet_token");
+    localStorage.removeItem("accountId");
     queryClient.cancelQueries();
     queryClient.clear();
     navigate(paths.login);
   };
-
-  // const { setCurrentPage } = useContext(CurrentPageContext);
-
   return (
     <Box
       bg="blue"
