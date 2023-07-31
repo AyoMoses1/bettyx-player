@@ -25,9 +25,9 @@ export const App = () => {
         <Route
           path={paths.home}
           element={
-            // <RequireAuth>
-            <Layout />
-            // </RequireAuth>
+            <RequireAuth>
+              <Layout />
+            </RequireAuth>
           }
         >
           <Route path={paths.upNext} element={<UpNext />} />
@@ -45,7 +45,7 @@ export const App = () => {
           <Route path={paths.cricket} element={<Cricket />} />
         </Route>
         <Route path={paths.login} element={<SignIn />} />
-         {/*
+        {/*
         <Route path={paths.forgotPassword} element={<ForgotPassword />} />
         <Route path={paths.enterNewPassword} element={<EnterNewPassword />} />
         <Route path={paths.passwordCreated} element={<PasswordCreated />} /> */}
@@ -57,7 +57,7 @@ export const App = () => {
 function RequireAuth({ children }) {
   let location = useLocation();
 
-  if (!localStorage.la_auth) {
+  if (!localStorage.bet_token) {
     return <Navigate to={paths.login} state={{ from: location }} replace />;
   }
 
