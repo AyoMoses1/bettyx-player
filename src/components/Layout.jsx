@@ -15,67 +15,21 @@ import {
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 import SideBar from "./SideBar";
-import IconSideBar from "./IconSideBar";
-import breakPoints from "../utils/breakPoints";
 import Navbar from "./NavBar";
 import NavBarMain from "./NavBarMain";
 
-const close = keyframes`
-  from { 
-      transform: translate(0vw); 
- 
-    }
-  to { 
-      transform: translate(-15vw); 
-
-
-      }
-`;
-
-const open = keyframes`
-  from { 
-      transform: translate(-15vw); 
-
-    }
-  to{ 
-      transform: translate(0vw); 
-
-      }
-`;
-
-const rightPainClose = keyframes`
-  from { margin-left: 5vw;}
-  to { margin-left: 15vw;}
-`;
-
-const rightPainOpen = keyframes`
-  from { margin-left: 15vw;}
-  to { margin-left: 5vw; }
-`;
-
-const toggleClose = keyframes`
-  from { margin-left: 4vw; }
-  to { margin-left: 14vw; }
-`;
-
-const toggleOpen = keyframes`
-  from { margin-left: 4vw; }
-  to { margin-left: 4vw; }
-`;
-
 const Layout = () => {
   const { isOpen, onToggle } = useDisclosure();
-  const [isLargerThan1500] = useMediaQuery(breakPoints.laptopL);
 
   useEffect(() => {
     onToggle();
   }, []);
 
   return (
-    <Box>
+    <Box bgColor="#1B1834E6">
       <Navbar />
       <Grid minH="80vh" templateColumns="25vw 1fr">
-        <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 5 }}>
+        <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 5 }} bg="blue">
           <Box zIndex="900" position="fixed" width="25vw" height="100vh">
             <SideBar isOpen={isOpen} />
           </Box>
@@ -85,8 +39,7 @@ const Layout = () => {
             <Box
               position="fixed"
               top="12vh"
-              // zIndex="800"
-              bg="white"
+              // bg="white"
               width="100%"
             >
               <NavBarMain />

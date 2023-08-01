@@ -12,6 +12,7 @@ import {
   Text,
   Icon,
   HStack,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineHome } from "react-icons/ai";
@@ -26,6 +27,8 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const [isMobile] = useMediaQuery("(max-width: 1020px)"); // Check for mobile screens
+
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -39,10 +42,10 @@ const Navbar = () => {
     <Box
       bg="blue"
       color="white"
-      py={["2", "4"]}
+      py={["2"]}
       h={["8vh", "12vh"]}
       position="fixed"
-      height="10vh"
+      height="15vh"
       width="100vw"
       zIndex="800"
     >
@@ -51,22 +54,22 @@ const Navbar = () => {
           <Flex>
             <VStack mr={12}>
               <Text variant="nav">SPORTS</Text>
-              <AiOutlineHome size={32} />
+              <AiOutlineHome size={isMobile ? 24 : 32} />
             </VStack>
             <VStack mr={12}>
               <Text variant="nav">LIVE</Text>
-              <FaTv size={32} />
+              <FaTv size={isMobile ? 24 : 32} />
             </VStack>
             <VStack mr={12}>
               <Text variant="nav">CASINO</Text>
-              <FaAddressCard size={32} />
+              <FaAddressCard size={isMobile ? 24 : 32} />
             </VStack>
             <VStack mr={12}>
               <Text variant="nav">MORE</Text>
-              <FaTh size={32} />
+              <FaTh size={isMobile ? 24 : 32} />
             </VStack>
             <Box p="4" mr={12} bg="blue" display={["block", "none"]}>
-              <FiSearch size={24} />
+              <FiSearch size={isMobile ? 24 : 32} />
             </Box>
           </Flex>
         </Box>

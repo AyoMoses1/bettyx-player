@@ -37,10 +37,10 @@ const NavBarMain = () => {
     <StyledBox color="white" px={0} py={0} pb={2} bgColor="blue">
       <Flex align="center">
         {navLinks.map((item) => (
-          <StyledBox bgColor="gray3" ml={2}>
-            <Text variant="navBold" color="blue">{item.symbol}</Text>
-            <Text variant="nav" color="blue">{item.name}</Text>
-          </StyledBox>
+          <StyledInnerBox ml={2}>
+            <Text variant="navBold" color="white">{item.symbol}</Text>
+            <Text variant="nav" color="white">{item.name}</Text>
+          </StyledInnerBox>
         ))}
       </Flex>
     </StyledBox>
@@ -52,4 +52,10 @@ export default NavBarMain;
 const StyledBox = styled(Box)`
   padding: 5px 30px;
   text-align: center;
+`;
+
+const StyledInnerBox = styled(Box)`
+  padding: 5px 30px;
+  text-align: center;
+  border: 1px solid #393838;
 `;

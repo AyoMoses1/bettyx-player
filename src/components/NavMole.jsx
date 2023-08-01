@@ -1,5 +1,4 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
-import { VscTriangleDown } from 'react-icons/vsc';
 import { FiLogOut } from 'react-icons/fi';
 
 const NavMole = ({
@@ -8,11 +7,7 @@ const NavMole = ({
   isLogout,
 }) => {
   return (
-    <HStack color={isLogout ? 'red' : 'none'} pb={3}>
-      {!isLogout && <Box visibility='hidden'>
-        <VscTriangleDown />
-      </Box>}
-
+    <HStack pb={3} borderBottom="1px solid" borderColor="#393838">
       {isLogout && <FiLogOut />}
       <Text fontSize='sm' variant='nav'>{name}</Text>
     </HStack>

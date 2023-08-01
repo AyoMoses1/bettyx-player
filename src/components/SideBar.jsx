@@ -52,17 +52,16 @@ const Index = (props) => {
 
   return (
     <VStack
-      bgColor="white"
       width="100%"
       height="100%"
       borderRight="1px solid"
       borderColor="gray.200"
       marginTop="12vh"
     >
-      <VStack borderBottom="1px solid" borderColor="gray.200" h="15%" w="100%">
+      <VStack h="15%" w="100%">
         <Center h="100%" w="100%">
           <VStack align="start" w="100%" height="100%">
-            <InputGroup height="100%">
+            <InputGroup height="50%">
               <InputLeftElement
                 pointerEvents="none"
                 children={<FiSearch color="gray.300" />}
@@ -94,6 +93,8 @@ const Index = (props) => {
         flexDirection="column"
         height="78%"
         width="100%"
+        bgColor="blue"
+        color="white"
         pl="4"
         pt="5"
         overflow="auto"

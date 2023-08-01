@@ -26,14 +26,6 @@ export const useSignIn = () => {
       });
     },
     onSuccess: (data) => {
-      toast({
-        title: "Player Logged In",
-        description: "Player Logged In Successfully",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-        position: "top",
-      });
       localStorage.setItem("bet_token", data.data.token);
       localStorage.setItem("accountId", data.data.user.accountId);
       navigate(from, { replace: true });
