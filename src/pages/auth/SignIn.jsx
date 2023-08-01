@@ -8,10 +8,14 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
+import { InputGroup, InputRightElement, IconButton } from "@chakra-ui/react";
+import bgImage from "assets/images/new-bg.jpeg"
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useSignIn } from "./queryHooks";
+import { useState } from "react";
 
 const schema = yup
   .object()
@@ -23,6 +27,11 @@ const schema = yup
 
 const SignIn = () => {
   const { mutate, isLoading } = useSignIn();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
   const {
     register,
     handleSubmit,
@@ -38,7 +47,7 @@ const SignIn = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      bgImage="url('https://images.pexels.com/photos/3131406/pexels-photo-3131406.jpeg?auto=compress&cs=tinysrgb&w=600')"
+      bgImage={bgImage}
       bgSize="cover"
       bgPosition="center"
     >
@@ -48,32 +57,28 @@ const SignIn = () => {
         left="0"
         width="100%"
         height="100%"
-        bgGradient="linear(to-r, #0a192f, #0d253f)"
-        opacity="0.9"
+        opacity="0.1"
+        bgGradient="linear(to-r, #0a192f, #0d0d65)"
       />
 
       <Box
-        bg="white"
         p="8"
-        rounded="lg"
-        boxShadow="lg"
-        maxWidth="400px"
+        maxWidth="40vw"
         width="90%"
         position="relative"
         zIndex="1"
       >
-        <Text fontSize="xl" fontWeight="bold" mb="6" textAlign="center">
-          Player Login
+        <Text fontSize="xl" fontWeight="bold" mb="6" color="white">
+          Login into your account
         </Text>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl id="email">
-            <FormLabel>Email Address</FormLabel>
             <Input
               placeholder="Player ID"
               size="lg"
               mb="4"
-              borderRadius="full"
-              focusBorderColor="purple.400"
+              bgColor="transparent"
+              borderRadius="none"
               {...register("accountId")}
             />
             {errors?.accountId && (
@@ -81,30 +86,45 @@ const SignIn = () => {
             )}
           </FormControl>
           <FormControl id="password">
-            <FormLabel>Password</FormLabel>
+          <InputGroup>
             <Input
-              type="password"
-              placeholder="Password"
+              pr="4.5rem" // To accommodate the eye icon button
+              type={showPassword ? "text" : "password"}
+              placeholder="*****"
               size="lg"
               mb="6"
-              borderRadius="full"
+              borderRadius="none"
               focusBorderColor="purple.400"
               {...register("password")}
             />
+            <InputRightElement
+              width="4.5rem"
+              top="30%"
+              transform="translateY(-50%)"
+            >
+              <IconButton
+                h="1.75rem"
+                size="sm"
+                aria-label={showPassword ? "Hide password" : "Show password"}
+                icon={showPassword ? <FaEyeSlash /> : <FaEye />}
+                onClick={handleTogglePassword}
+              />
+            </InputRightElement>
+          </InputGroup>
             {errors?.password && (
               <FormErrorMessage>Password is required</FormErrorMessage>
             )}
           </FormControl>
           <Button
             type="submit"
-            colorScheme="purple"
             size="lg"
+            bgColor="blue2"
             width="full"
-            borderRadius="full"
+            borderRadius="none"
             variant="secondary"
             isLoading={isLoading}
           >
-            Login
+            Log in
           </Button>
         </form>
       </Box>
