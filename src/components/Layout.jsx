@@ -21,19 +21,18 @@ import NavBarMain from "./NavBarMain";
 const Layout = () => {
   return (
     <Box bgColor="primary">
+      <Box height="100px">
+        <Navbar />
+      </Box>
       <Grid
-        height="100vh"
-        templateRows="repeat(10, 1fr)"
+        height="calc(100vh - 100px)"
         templateColumns="repeat(5, 1fr)"
-        gap={0}
+        overflow={"hidden"}
       >
-        <GridItem rowSpan={1} colSpan={5}>
-          <Navbar />
-        </GridItem>
-        <GridItem rowSpan={9} colSpan={1} mt="5vh">
+        <GridItem height="100%" colSpan={[5, 1]} overflow="auto">
           <SideBar />
         </GridItem>
-        <GridItem rowSpan={1} colSpan={4} mt="12vh">
+        <GridItem colSpan={[5, 4]}>
           <NavBarMain />
           <Outlet />
         </GridItem>

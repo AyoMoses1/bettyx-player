@@ -44,11 +44,7 @@ const Index = (props) => {
 
   return (
     <VStack borderRight="1px solid" borderColor="gray.200">
-      <Box
-        width="100%"
-        bgColor="blue"
-        color="white"
-      >
+      <Box width="100%" bgColor="blue" color="white" >
         <VStack>
           <InputGroup>
             <InputLeftElement
@@ -73,12 +69,7 @@ const Index = (props) => {
           </Box>
         </VStack>
         <>{navs}</>
-        <Box
-          bgColor="black"
-          color="textDark"
-          width="100%"
-          py={2}
-        >
+        <Box bgColor="black" color="textDark" width="100%" py={2}>
           FEEDBACK
         </Box>
       </Box>

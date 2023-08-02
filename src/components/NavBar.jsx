@@ -133,10 +133,10 @@ const Navbar = () => {
 export default Navbar;
 
 const StyledBox = styled(Box)`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 12vh !important;
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // left: 0;
+  // height: 12vh !important;
 
 `
