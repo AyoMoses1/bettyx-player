@@ -42,24 +42,12 @@ const Index = (props) => {
     )
   );
 
-  const handleLogout = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("la_auth");
-    queryClient.cancelQueries();
-    queryClient.clear();
-    navigate(pagePaths.login);
-  };
-
   return (
     <VStack borderRight="1px solid" borderColor="gray.200">
       <Box
-        // display="flex"
-        // flexDirection="column"
         width="100%"
         bgColor="blue"
         color="white"
-        // // pt="125"
-        // overflow="auto"
       >
         <VStack>
           <InputGroup>

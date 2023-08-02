@@ -19,7 +19,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FaAddressCard, FaChevronDown, FaTh, FaTv } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { menuItems } from "./utils/helpers";
-import { BiPowerOff } from "react-icons/bi";
+import { BiBasketball, BiPowerOff } from "react-icons/bi";
 import { useQueryClient } from "@tanstack/react-query";
 import paths from "utils/paths";
 import { useNavigate } from "react-router-dom";
@@ -51,7 +51,7 @@ const Navbar = () => {
           <Flex>
             <VStack mr={12}>
               <Text variant="nav">SPORTS</Text>
-              <AiOutlineHome size={isMobile ? 24 : 32} />
+              <BiBasketball size={isMobile ? 24 : 32} />
             </VStack>
             <VStack mr={12}>
               <Text variant="nav">LIVE</Text>
