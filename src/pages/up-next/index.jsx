@@ -1,11 +1,11 @@
 import DynamicTable from "components/DynamicTable";
-import PageScaffold from "components/PageScaffold";
-import { PageTitles } from "utils/paths";
-import { Info } from "components/Info";
-import { Box } from "@chakra-ui/react";
+import { Box, Grid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { data } from "./data";
 import { columns } from "./helpers";
+import PageHeader from "components/PageHeader";
+import { FaClock } from "react-icons/fa";
+import HeadingTable from "components/HeadingTable";
 
 const Index = () => {
   const [pageProps, setPageProps] = useState({
@@ -14,11 +14,9 @@ const Index = () => {
   });
 
   return (
-    <PageScaffold title={PageTitles.upNext}>
-      <Info>
-        Soccer wagers, unless otherwise specified, are for regulation time and
-        added time only. Extra time and shoot outs are not included.
-      </Info>
+    <>
+      <PageHeader title="Up Next" icon={<FaClock />} />
+      <HeadingTable />
       <Box mt={8}>
         <DynamicTable
           setPageProps={setPageProps}
@@ -29,7 +27,7 @@ const Index = () => {
           totalPages={data?.totalPages}
         />
       </Box>
-    </PageScaffold>
+    </>
   );
 };
 

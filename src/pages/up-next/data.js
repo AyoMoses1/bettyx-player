@@ -57,36 +57,4 @@ export const data = [
     balance: "-80",
     pending: "2,000"
   },
-  {
-    customer: "CUST4",
-    name: "Customer 4",
-    password: "P456789",
-    carry: "-550.20",
-    monday: "150",
-    tuesday: "-220",
-    wednesday: "180",
-    thursday: "-300",
-    friday: "250",
-    saturday: "-200",
-    sunday: "160",
-    week: "220",
-    balance: "-100",
-    pending: "1,500"
-  },
-  {
-    customer: "CUST5",
-    name: "Customer 5",
-    password: "P135790",
-    carry: "-128.90",
-    monday: "50",
-    tuesday: "-70",
-    wednesday: "100",
-    thursday: "-150",
-    friday: "80",
-    saturday: "-60",
-    sunday: "40",
-    week: "140",
-    balance: "-60",
-    pending: "1,000"
-  }
 ];

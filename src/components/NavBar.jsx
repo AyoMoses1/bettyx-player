@@ -23,12 +23,12 @@ import { BiBasketball, BiPowerOff } from "react-icons/bi";
 import { useQueryClient } from "@tanstack/react-query";
 import paths from "utils/paths";
 import { useNavigate } from "react-router-dom";
+import styled from 'styled-components'
 
 const Navbar = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const [isMobile] = useMediaQuery("(max-width: 1020px)"); // Check for mobile screens
-
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -39,13 +39,7 @@ const Navbar = () => {
     navigate(paths.login);
   };
   return (
-    <Box
-      bg="blue"
-      color="white"
-      py={["2"]}
-      height="100%"
-      zIndex="800"
-    >
+    <StyledBox bg="blue" color="white" py={["2"]} height="100%" zIndex="800">
       <Flex maxW="98%" mx="auto" align="center">
         <Box>
           <Flex>
@@ -132,8 +126,17 @@ const Navbar = () => {
           </MenuList>
         </Menu>
       </Flex>
-    </Box>
+    </StyledBox>
   );
 };
 
 export default Navbar;
+
+const StyledBox = styled(Box)`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 12vh !important;
+
+`
