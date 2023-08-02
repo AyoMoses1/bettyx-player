@@ -19,36 +19,24 @@ import Navbar from "./NavBar";
 import NavBarMain from "./NavBarMain";
 
 const Layout = () => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  useEffect(() => {
-    onToggle();
-  }, []);
-
   return (
-    <Box bgColor="#1B1834E6">
-      <Navbar />
-      <Grid minH="80vh" templateColumns="25vw 1fr">
-        <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 5 }} bg="blue">
-          <Box zIndex="900" position="fixed" width="25vw" height="100vh">
-            <SideBar isOpen={isOpen} />
-          </Box>
+    <Box bgColor="primary">
+      <Grid
+        minH="100vh"
+        templateRows="repeat(10, 1fr)"
+        templateColumns="repeat(5, 1fr)"
+        gap={0}
+      >
+        <GridItem rowSpan={1} colSpan={5}>
+          <Navbar />
         </GridItem>
-        <GridItem rowSpan={{ base: 0, lg: 10 }} colSpan={{ base: 10, lg: 15 }}>
-          <Box pt="4rem" pl="25vw" pr="1rem" pb="1rem" overflowY="auto">
-            <Box
-              position="fixed"
-              top="12vh"
-              // bg="white"
-              width="100%"
-            >
-              <NavBarMain />
-            </Box>
-            <Box pt="5rem">
-              <Outlet />
-            </Box>
-          </Box>
+        <GridItem rowSpan={9} colSpan={1}>
+          <SideBar />
         </GridItem>
+        <GridItem rowSpan={1} colSpan={4}>
+          <NavBarMain />
+        </GridItem>
+        <Outlet />
       </Grid>
     </Box>
   );

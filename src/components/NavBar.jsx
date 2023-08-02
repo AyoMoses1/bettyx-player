@@ -43,10 +43,7 @@ const Navbar = () => {
       bg="blue"
       color="white"
       py={["2"]}
-      h={["8vh", "12vh"]}
-      position="fixed"
-      height="15vh"
-      width="100vw"
+      height="100%"
       zIndex="800"
     >
       <Flex maxW="98%" mx="auto" align="center">

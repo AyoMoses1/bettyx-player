@@ -1,15 +1,12 @@
-import { Box, HStack, Text } from '@chakra-ui/react';
-import { FiLogOut } from 'react-icons/fi';
+import { HStack, Text, Icon } from "@chakra-ui/react";
 
-const NavMole = ({
-  name,
-  icon,
-  isLogout,
-}) => {
+const NavMole = ({ name, icon, isLogout }) => {
   return (
-    <HStack pb={3} borderBottom="1px solid" borderColor="#393838">
-      {isLogout && <FiLogOut />}
-      <Text fontSize='sm' variant='nav'>{name}</Text>
+    <HStack py={3} borderBottom="1px solid" borderColor="#393838" pl="4">
+      <Icon as={icon} color="white"/>
+      <Text fontSize="sm" variant="nav">
+        {name}
+      </Text>
     </HStack>
   );
 };

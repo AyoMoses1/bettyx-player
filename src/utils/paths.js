@@ -1,8 +1,8 @@
 import { VscFileMedia } from "react-icons/vsc";
-import { FaWarehouse } from "react-icons/fa";
-import { FiUsers } from "react-icons/fi";
-import { GrUserWorker } from "react-icons/gr";
-import { BiWallet } from "react-icons/bi";
+import { FaCar, FaClock, FaFootballBall, FaGolfBall, FaRunning, FaStackOverflow, FaStar, FaWarehouse } from "react-icons/fa";
+import { FiClock, FiGlobe, FiUsers } from "react-icons/fi";
+import { GrClock, GrUserWorker } from "react-icons/gr";
+import { BiBaseball, BiBasketball, BiCameraMovie, BiCricketBall, BiFootball, BiLogoXing, BiSolidCameraMovie, BiStar, BiTennisBall, BiTv, BiWallet } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 
 const paths = {
@@ -11,6 +11,7 @@ const paths = {
   upNext: "/up-next",
   featured: "/feaured",
   liveStreaming: "/live-streaming",
+  commercialLive: "/commercial-live",
   baseball: "/baseball",
   football: "/football",
   basketball: "/basketball",
@@ -27,6 +28,7 @@ export const NavNames = {
   upNext: "Up Next",
   featured: "Feaured",
   liveStreaming: "Live Streaming",
+  commercialLive: "Commercial Live",
   baseball: "Baseball",
   football: "Football",
   basketball: "Basketball",
@@ -56,14 +58,14 @@ export const PageTitles = {
 
 export const pathObject = [
   {
-    main: { name: NavNames.upNext, path: paths.upNext, icon: <FaWarehouse /> },
+    main: { name: NavNames.upNext, path: paths.upNext, icon: FiClock },
     sub: [],
   },
   {
     main: {
       name: NavNames.featured,
       path: paths.featured,
-      icon: <GrUserWorker />,
+      icon: BiStar,
     },
     sub: [],
   },
@@ -71,23 +73,15 @@ export const pathObject = [
     main: {
       name: NavNames.liveStreaming,
       path: paths.liveStreaming,
-      icon: <GrUserWorker />,
+      icon: BiTv,
     },
     sub: [],
   },
   {
     main: {
-      name: NavNames.baseball,
-      path: paths.baseball,
-      icon: <GrUserWorker />,
-    },
-    sub: [],
-  },
-  {
-    main: {
-      name: NavNames.football,
-      path: paths.football,
-      icon: <GrUserWorker />,
+      name: NavNames.commercialLive,
+      path: paths.commercialLive,
+      icon: BiSolidCameraMovie
     },
     sub: [],
   },
@@ -95,7 +89,23 @@ export const pathObject = [
     main: {
       name: NavNames.basketball,
       path: paths.basketball,
-      icon: <GrUserWorker />,
+      icon: BiBasketball,
+    },
+    sub: [],
+  },
+  {
+    main: {
+      name: NavNames.baseball,
+      path: paths.baseball,
+      icon: BiBaseball,
+    },
+    sub: [],
+  },
+  {
+    main: {
+      name: NavNames.football,
+      path: paths.football,
+      icon: FaFootballBall,
     },
     sub: [],
   },
@@ -103,7 +113,7 @@ export const pathObject = [
     main: {
       name: NavNames.soccer,
       path: paths.soccer,
-      icon: <GrUserWorker />,
+      icon: BiFootball,
     },
     sub: [],
   },
@@ -111,7 +121,7 @@ export const pathObject = [
     main: {
       name: NavNames.golf,
       path: paths.golf,
-      icon: <GrUserWorker />,
+      icon: FaGolfBall,
     },
     sub: [],
   },
@@ -119,7 +129,7 @@ export const pathObject = [
     main: {
       name: NavNames.martialArts,
       path: paths.martialArts,
-      icon: <GrUserWorker />,
+      icon: FaRunning,
     },
     sub: [],
   },
@@ -127,7 +137,7 @@ export const pathObject = [
     main: {
       name: NavNames.boxing,
       path: paths.boxing,
-      icon: <GrUserWorker />,
+      icon: FiGlobe,
     },
     sub: [],
   },
@@ -135,7 +145,7 @@ export const pathObject = [
     main: {
       name: NavNames.tennis,
       path: paths.tennis,
-      icon: <GrUserWorker />,
+      icon: BiTennisBall,
     },
     sub: [],
   },
@@ -143,7 +153,7 @@ export const pathObject = [
     main: {
       name: NavNames.autoRacing,
       path: paths.autoRacing,
-      icon: <GrUserWorker />,
+      icon: FaCar,
     },
     sub: [],
   },
@@ -151,7 +161,7 @@ export const pathObject = [
     main: {
       name: NavNames.cricket,
       path: paths.cricket,
-      icon: <GrUserWorker />,
+      icon: BiCricketBall,
     },
     sub: [],
   },

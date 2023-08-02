@@ -1,5 +1,5 @@
 export const tokens = {
-  primary: '#000814',
+  primary: '#1B1834E6',
   secondary: '#FFC300',
   gray1: '#333333',
   gray3: '#BDBDBD',

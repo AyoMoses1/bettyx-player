@@ -51,62 +51,47 @@ const Index = (props) => {
   };
 
   return (
-    <VStack
-      width="100%"
-      height="100%"
-      borderRight="1px solid"
-      borderColor="gray.200"
-      marginTop="12vh"
-    >
-      <VStack h="15%" w="100%">
-        <Center h="100%" w="100%">
-          <VStack align="start" w="100%" height="100%">
-            <InputGroup height="50%">
-              <InputLeftElement
-                pointerEvents="none"
-                children={<FiSearch color="gray.300" />}
-              />
-              <Input
-                type="text"
-                placeholder="Search..."
-                size="md"
-                borderRadius="none"
-                height="100%"
-              />
-            </InputGroup>
-            <Box
-              bgColor="blue"
-              color="textDark"
-              w="100%"
-              height="50%"
-              py={4}
-              mt={-2}
-              textAlign="center"
-            >
-              SPORTS SCHEDULE
-            </Box>
-          </VStack>
-        </Center>
-      </VStack>
+    <VStack borderRight="1px solid" borderColor="gray.200">
       <Box
-        display="flex"
-        flexDirection="column"
-        height="78%"
+        // display="flex"
+        // flexDirection="column"
         width="100%"
         bgColor="blue"
         color="white"
-        pl="4"
-        pt="5"
-        overflow="auto"
+        // // pt="125"
+        // overflow="auto"
       >
+        <VStack>
+          <InputGroup>
+            <InputLeftElement
+              pointerEvents="none"
+              children={<FiSearch color="gray.300" />}
+            />
+            <Input
+              type="text"
+              placeholder="Search..."
+              size="md"
+              borderRadius="none"
+            />
+          </InputGroup>
+          <Box
+            bgColor="gray1"
+            color="textDark"
+            width="100%"
+            textAlign="center"
+            py={2}
+          >
+            SPORTS SCHEDULE
+          </Box>
+        </VStack>
         <>{navs}</>
-
-        <Box mt="auto">
-          <LinkBox>
-            <LinkOverlay href="" onClick={handleLogout}>
-              <NavMole isLogout={true} name="Logout" icon={<FiLogOut />} />
-            </LinkOverlay>
-          </LinkBox>
+        <Box
+          bgColor="black"
+          color="textDark"
+          width="100%"
+          py={2}
+        >
+          FEEDBACK
         </Box>
       </Box>
     </VStack>
