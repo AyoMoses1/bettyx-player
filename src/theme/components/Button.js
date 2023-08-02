@@ -10,59 +10,60 @@ export const ButtonStyle = {
   },
   variants: {
     primary: (props) => ({
-      bg: props.theme.colors.turquoise,
-      color: '#fff',
-      fontWeight: '600',
-      borderRadius: 'none',
-      ':focus': {
-        bg: props.theme.colors.secondary,
-        boxShadow: 'md',
+      bg: props.theme.colors.blue2,
+      color: "#fff",
+      fontWeight: "600",
+      borderRadius: "none",
+      _active: { bg: "blue2" },
+      ":focus": {
+        bg: props.theme.colors.blue2,
+        boxShadow: "md",
       },
-      ':disabled': {
+      ":disabled": {
         bg: props.theme.colors.muted,
-        ':hover': {
+        ":hover": {
           bg: props.theme.colors.secondary,
-          boxShadow: 'md',
+          boxShadow: "md",
         },
       },
     }),
     success: (props) => ({
       bg: props.theme.colors.green,
       color: props.theme.colors.white,
-      borderRadius: 'none',
+      borderRadius: "none",
     }),
     cancel: (props) => ({
-      bg: 'red',
+      bg: "red",
       color: props.theme.colors.white,
-      borderRadius: 'none',
+      borderRadius: "none",
     }),
     secondary: (props) => ({
       bg: props.theme.colors.blue,
       color: props.theme.colors.text,
-      width: '127px',
-      borderRadius: 'none',
-      ':focus': {
+      width: "127px",
+      borderRadius: "none",
+      ":focus": {
         bg: props.theme.colors.primary,
-        boxShadow: 'md',
+        boxShadow: "md",
       },
-      ':disabled': {
+      ":disabled": {
         bg: props.theme.colors.muted,
-        ':hover': {
+        ":hover": {
           bg: props.theme.colors.secondary,
-          boxShadow: 'md',
+          boxShadow: "md",
         },
       },
     }),
     noBg: (props) => ({
-      ':hover': {
-        boxShadow: 'md',
+      ":hover": {
+        boxShadow: "md",
       },
     }),
     outline: (props) => {
       return {
         border: `1px solid ${props.theme.colors.buttonOne} !`,
         color: `${props.theme.colors.buttonOne} !important`,
-        borderRadius: '5px',
+        borderRadius: "5px",
         // ':hover': {
         //   boxShadow: 'md',
         //   bg: props.theme.colors.primary,
@@ -72,25 +73,25 @@ export const ButtonStyle = {
     },
     half: (props) => ({
       bg: props.theme.colors.primary,
-      color: '#fff',
-      ':hover': {
+      color: "#fff",
+      ":hover": {
         bg: props.theme.colors.secondary,
-        boxShadow: 'md',
+        boxShadow: "md",
       },
-      width: '50%',
+      width: "50%",
     }),
     full: (props) => ({
       bg: props.theme.colors.primary,
-      color: '#fff',
-      ':hover': {
+      color: "#fff",
+      ":hover": {
         bg: props.theme.colors.secondary,
-        boxShadow: 'md',
+        boxShadow: "md",
       },
-      width: '100%',
+      width: "100%",
     }),
   },
   defaultProps: {
-    size: 'md',
-    variant: 'normal',
+    size: "md",
+    variant: "normal",
   },
 };
